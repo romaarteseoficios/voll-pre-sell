@@ -3,164 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso Restrito - VOLL Plus</title>
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" href="https://vollplus.com.br/wp-content/uploads/2024/05/logo_voll_pilates_institucional.png">
+    <title>ENERGYB - O Hack de Produtividade</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-        /* Reset para página standalone (GitHub Pages) */
-        body, html {
+        :root {
+            --primary: #FFD700; /* Amarelo ouro, converte muito bem */
+            --bg-dark: #0a0a0b;
+            --text-light: #f5f5f5;
+            --red-alert: #e50914;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            overflow-x: hidden;
-        }
-
-        .voll-presell-wrapper {
-            background: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80') center/cover no-repeat;
-            min-height: 100vh;
-            width: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
             box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Camada escura por cima da imagem */
-        .voll-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(8px);
-            z-index: 1;
+        body {
+            background-color: #f2f3f5; /* Fundo claro passa mais credibilidade de "artigo/saúde" */
+            color: #111;
         }
 
-        /* O Modal / Cartão central */
-        .voll-modal {
-            background: #ffffff;
-            border-radius: 16px;
-            max-width: 500px;
-            width: 100%;
-            padding: 45px 35px;
+        .alert-bar {
+            background-color: var(--red-alert);
+            color: #fff;
             text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             position: relative;
-            z-index: 2;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            animation: vollPopIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            z-index: 10;
         }
 
-        @keyframes vollPopIn {
-            0% { opacity: 0; transform: scale(0.9) translateY(20px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border-radius: 0 0 12px 12px;
         }
 
-        /* Logo ou Texto de Destaque */
-        .voll-logo-text {
-            font-size: 32px;
-            font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 25px;
+        .headline {
+            font-size: 38px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: #000;
+            text-align: center;
+            margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
-        .voll-logo-text span {
-            color: #00c853;
+        .headline span {
+            color: var(--red-alert);
+            text-decoration: underline;
         }
 
-        /* Badge de Atenção */
-        .voll-alert-badge {
-            background: #fff3cd;
-            color: #856404;
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .subheadline {
+            font-size: 20px;
+            font-weight: 500;
+            color: #444;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.5;
         }
 
-        .voll-title {
-            font-size: 22px;
-            line-height: 1.4;
+        .hero-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            text-align: center;
+            background: radial-gradient(circle, #e6e6e6 0%, #fff 70%);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+        }
+
+        .benefits {
+            flex: 1;
+        }
+
+        .benefits ul {
+            list-style: none;
+        }
+
+        .benefits li {
+            font-size: 17px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            font-weight: 600;
             color: #222;
-            font-weight: 700;
+        }
+
+        .benefits li svg {
+            width: 24px;
+            height: 24px;
+            fill: #00c853;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .text-content {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .text-content p {
             margin-bottom: 15px;
         }
 
-        .voll-desc {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        .cta-container {
+            text-align: center;
+            margin-top: 30px;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            border: 2px dashed #ccc;
         }
 
-        /* Botão de Ação */
-        .voll-btn {
-            background: #00c853;
-            color: #ffffff !important;
-            display: block;
-            width: 100%;
-            padding: 18px 20px;
-            border-radius: 8px;
-            font-size: 17px;
-            font-weight: 700;
-            text-decoration: none !important;
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00c853;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 900;
             text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
+            padding: 22px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 200, 83, 0.4);
             transition: all 0.3s ease;
-            animation: vollPulse 2s infinite;
-            cursor: pointer;
-            box-sizing: border-box;
+            width: 100%;
+            max-width: 500px;
+            letter-spacing: 0.5px;
+            animation: pulse 2s infinite;
         }
 
-        .voll-btn:hover {
-            background: #00b34a;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 200, 83, 0.6);
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: #00e676;
         }
 
-        @keyframes vollPulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.6); }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(0, 200, 83, 0); }
             100% { box-shadow: 0 0 0 0 rgba(0, 200, 83, 0); }
         }
 
-        .voll-security {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #999;
+        .safe-checkout {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 6px;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .safe-checkout svg {
+            width: 18px;
+            fill: #666;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+            }
+            .headline { font-size: 28px; }
+            .subheadline { font-size: 16px; }
+            .container { padding: 20px; }
+            .cta-button { font-size: 18px; padding: 20px 30px; }
         }
     </style>
 </head>
 <body>
-    <div class="voll-presell-wrapper">
-        <div class="voll-overlay"></div>
-        <div class="voll-modal">
-            <div class="voll-alert-badge">⚠️ Acesso Restrito</div>
-            <div class="voll-logo-text">VOLL <span>Plus</span></div>
-            <h2 class="voll-title">A maior plataforma de forma&ccedil;&atilde;o cont&iacute;nua em Pilates do Brasil.</h2>
-            <p class="voll-desc">Para garantir que voc&ecirc; &eacute; um profissional ou estudante da &aacute;rea e liberar os planos com <strong>condi&ccedil;&otilde;es especiais</strong>, precisamos da sua confirma&ccedil;&atilde;o.</p>
-            
-            <a href="https://go.hotmart.com/S105873266K" target="_top" onclick="window.location.href='https://go.hotmart.com/S105873266K'; return false;" class="voll-btn">
-                Sou Profissional/Estudante - Acessar
-            </a>
 
-            <div class="voll-security">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                P&aacute;gina 100% Segura e Oficial
+    <div class="alert-bar">
+        ⚡ OFERTA LIMITADA: APENAS 12 FRASCOS COM FRETE GRÁTIS DISPONÍVEIS
+    </div>
+
+    <div class="container">
+        
+        <h1 class="headline">
+            O Segredo Revelado Para Ter o <span>Dobro de Energia</span> Sem Precisar de Café
+        </h1>
+        
+        <p class="subheadline">
+            Conheça o "combustível em comprimido" de Vitamina B12 pura que virou febre entre profissionais de alta performance no Brasil.
+        </p>
+
+        <div class="hero-section">
+            <div class="hero-image">
+                <img src="https://energyb.99vitamais.com/wp-content/uploads/2025/12/FRASCOS-MOCKUP-3D-ENERGY-B-SEM-FUNDO-01.png" alt="EnergyB Frasco">
+            </div>
+            
+            <div class="benefits">
+                <ul>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Efeito imediato contra o cansaço
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Foco e concentração extrema
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Zero "Efeito Rebote" e palpitações
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        Comprimido Mastigável Prático
+                    </li>
+                </ul>
             </div>
         </div>
+
+        <div class="text-content">
+            <p>Se você acorda exausto mesmo depois de dormir 8 horas, ou sente aquela "queda de energia" logo após o almoço, o problema provavelmente não é o sono: <strong>é a deficiência silenciosa de Vitamina B12.</strong></p>
+            <p>A cafeína apenas mascara o cansaço por algumas horas, cobrando um preço alto depois (o famoso efeito rebote). O <strong>ENERGYB</strong> age na raiz do problema, repondo nutrientes essenciais de forma direta na sua corrente sanguínea com sua fórmula mastigável ultra-rápida.</p>
+        </div>
+
+        <div class="cta-container">
+            <p style="margin-bottom: 20px; font-weight: 700; color: #e50914; font-size: 18px;">⚠️ ATENÇÃO: Últimas unidades em estoque promocional!</p>
+            
+            <a href="https://go.hotmart.com/G106042004U" class="cta-button" target="_top" onclick="window.location.href='https://go.hotmart.com/G106042004U'; return false;">
+                SIM, QUERO MAIS ENERGIA AGORA!
+            </a>
+
+            <div class="safe-checkout">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                Site Oficial - Compra 100% Segura
+            </div>
+        </div>
+
     </div>
+
 </body>
 </html>
